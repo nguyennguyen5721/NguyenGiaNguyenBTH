@@ -1,0 +1,36 @@
+<h2></h2>Danh sách sinh vien</h2>
+<hr>
+<table class="table border">
+    <tr>
+        <th>
+            <labeL>Ma Sinh vien</label>
+            </th>
+            <th>
+                <label>Ten Sinh vien</label>
+            </th>
+            <th>
+                <label>Tuoi</label>
+            </th>
+        </tr>
+@foreach (var item in ViewData["Students"] as List<Student>)
+{
+    <tr>
+        <td>@item.StudentID</td>
+        <td>@item.StudentName</td>
+        <td>@item.Age</td>
+    </tr>
+}
+</table>
+<form asp-action="Create">
+<label>Ma sinh vien:</label>
+<input type="number" name="StudentID" value="1">
+<br>
+<label>Ho ten sinh vien:</label>
+<input type="text" name="StudentName" value="Nguyen Van a">
+<br>
+<label>Tuoi:</label>
+<input type="number" name="Age" value="18">
+<br>
+<input type="submit" value="Send">
+</form>
+<h2>@ViewBag.TT</h2>
